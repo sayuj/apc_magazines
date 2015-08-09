@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20150801170355) do
     t.integer  "article_id"
     t.integer  "user_id"
     t.text     "comment"
-    t.integer  "parant_id"
+    t.integer  "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

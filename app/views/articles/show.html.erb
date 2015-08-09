@@ -1,7 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Edit', edit_magazine_article_path(@magazine, @article) if @article.author == current_user %>
+<%= link_to 'Back', magazine_articles_path(@magazine) %>
+
 <h3>Title: <%= @article.title %></h3>
 <p>Body: <%= @article.body %></p>
 
-<%= link_to 'Edit', edit_magazine_article_path(@magazine, @article) %> |
-<%= link_to 'Back', magazine_articles_path(@magazine) %>
+<h4>Comments:</h4>
+<div class="comments">
+  <% @article.comments.direct.each do |comment| %>
+      <%= render 'comments/comment', comment: comment, class_name: 'comment' %>
+  <% end %>
+</div>
+<%= link_to 'New comment', new_magazine_article_comment_path(@magazine, @article) %>

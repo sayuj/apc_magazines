@@ -1,0 +1,13 @@
+<div class="<%=class_name%>">
+  <%= comment.comment %>
+  <%= link_to 'Reply', new_magazine_article_comment_path(@magazine, @article, comment, parent_id: comment.id) %>
+  <% if comment.user == current_user %>
+      <%= link_to 'Edit', edit_magazine_article_comment_path(@magazine, @article, comment) %>
+      <% if comment.sub_comments.blank? %>
+          <%= link_to 'Delete', magazine_article_comment_path(@magazine, @article, comment), method: 'delete' %>
+      <% end %>
+  <% end %>
+  <% comment.sub_comments.each do |sub_comment| %>
+      <%= render 'comments/comment', comment: sub_comment, class_name: 'sub-comment'%>
+  <% end %>
+</div>

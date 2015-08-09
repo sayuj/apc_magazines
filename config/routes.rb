@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root 'magazines#index'
   resources :magazines do
     resources :articles do
+      resources :comments
     end
   end
 

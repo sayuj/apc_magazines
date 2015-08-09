@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+.sub-comment {
+    padding: 0 0 0 1em;
+}
+
+.comment {
+    padding: 0.5em 0 0 0;
+}
+
+.comments {
+    padding: 0 0 0.5em 0;
+}
+
+body {
+    width: 90%;
+    margin: auto;
+    font-family: sans-serif;
+}
+
+tbody th {
+    text-align: left;
+    padding: 0.5em;
+    background: #efefef;
+    margin-bottom: 1em;
+}
